@@ -35,6 +35,7 @@ xi    = [0 T0];  % Extent of reaction and temperature at the inlet
 
 %% Solution of ODEs
 % x(1)=eps, x(2)=T
+
 [V,x]=ode45(@funadpfr, Vspan, xi);
 
 %% Extracting and plotting the results
@@ -44,7 +45,8 @@ ndA = npA0 - x(:,1);  % Molar flowrate of A
 ndK = npK0 + x(:,1);  % Molar flowrate of K
 ndM = npM0 + x(:,1);  % Molar flowrate of M
 
-% conversion
+%% conversion
+
 conv= (npA0- ndA)/ npA0
 
 % Plot of molar flowrates vs. volume
